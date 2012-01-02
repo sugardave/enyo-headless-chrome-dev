@@ -1,9 +1,10 @@
 {
 	"id": "com.sugardave.headlessskeleton",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"vendor": "sugardave",
 	"type": "web",
 	"noWindow": true,
+	"dockMode": true,
 	"main": "index.html",
 	"title": "Headless Skeleton",
 	"icon": "icon.png",

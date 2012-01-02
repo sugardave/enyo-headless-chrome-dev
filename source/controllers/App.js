@@ -19,6 +19,13 @@ enyo.kind({
 			params.browserKind = "Regular"; // the name of the kind if needed for browser launch of first window
 		} else {
 			// do special things based on params (Exhibition mode, for example)
+			if (params.windowType === "dockModeWindow" && params.dockMode) { // this is an Exhibition launch
+
+				cardName = "exhibition";
+				
+				params.path = enyo.fetchAppRootPath() + "source/views/exhibition/exhibition.html";
+				params.browserKind = "Exhibition"; // the name of the kind if needed for browser launch of first window
+			}
 		}
 
 		this.openCard(cardName, params, params.forceNewCard);
