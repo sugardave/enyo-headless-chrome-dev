@@ -4,7 +4,6 @@ enyo.kind({
 	constructor: function(inArgs) {
 		this.inherited(arguments);
 		enyo.application.WindowManager = this.windowManager = new WindowManager();
-		enyo.application.app = this;
 	},
 	startup: function(inParams) {
 		var params = inParams || {}; // start building the window parameters we want
