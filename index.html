@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Headless Skeleton</title>
+		<script src="../../../../../Enyo/enyo/0.10/framework/enyo.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<!--<div id="messenger" class="messenger"></div>-->
+		<script type="text/javascript">
+			(function () {
+				var unloadFunc = function(){
+					// headless window unloaded
+					window.removeEventListener('unload', unloadFunc);
+				};
+				window.addEventListener('unload', unloadFunc);
+				
+				var app = enyo.application.App = new App();
+
+				enyo.applicationRelaunchHandler = function (params) {
+					// do something to determine what to do when parameters change because of a relaunch
+					app.relaunch();
+				};
+
+				// rename the window for the WindowManager
+				enyo.windows.renameWindow(window, "startup");
+
+				app.startup();
+			})();
+		</script>
+	</body>
+</html>
